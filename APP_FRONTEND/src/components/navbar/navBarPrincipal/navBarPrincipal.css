@@ -1,0 +1,67 @@
+/* ! NavBar en general */
+
+.navbar{
+    display: flex;
+    margin: 10px auto 0px;
+    border-bottom: 2px solid #116D8D;
+    z-index: 10;
+}
+
+/* ! NavBar info ( Logo, texto institucional ) */
+
+.navbar_info{
+    width: 30%;
+    margin: 0 30px;
+    display: flex;
+}
+
+.barraAzul{
+    border-right: 3px solid #116D8D;
+    margin: 3% -7px;
+    height: 50px;
+    width: 30px;
+}
+
+.navbar_info .logo img{
+    width: 80px;
+    height: 80px;
+}
+
+.navbar_info .navbar_info_text{
+    padding-left: 20px;
+    margin: 3%;
+}
+
+.navbar_info .navbar_info_text h4{
+    font-weight: 600;
+}
+
+.navbar_info .navbar_info_text h2{
+    font-weight: 900;
+}
+
+/* ! NavBar Links */
+
+.navbar_links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+}
+
+.navbar_links .link{
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+/* ! Navbar Submenu (Menu adicional + perfil) */
+
+.menu_hamburguesa{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
