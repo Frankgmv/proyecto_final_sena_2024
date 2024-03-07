@@ -95,10 +95,10 @@ Instalar dependencias
 
 > [!Tip]
 > ## No olvides las variables de entorno
-> - Si no agregas tus variables de entorno no va a correr correra el proyecto.
+> - Si no agregas tus variables de entorno no va a correr correctamente el proyecto.
 >
 
-Desplegar servidor local con la aplicación de backend
+Desplegar servidor local
 
 ```bash
   npm run dev
@@ -136,6 +136,3 @@ Herramienta para visualizar diagramas
 
 La documentación se encuentra toda enbebida en la carpeta DOCUMENTACION en la cual encontrará multiples diagramas, documentos y  manuales necesarios de la aplicación.
 
-
-
-https://staruml.io/download/
