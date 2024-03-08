@@ -1,6 +1,6 @@
 # Proyecto Centenario Pereira 2023 - 2024
 
-Proyecto para comunicar una comunidad del colegio Centenario de Pereira ubicado en la ciudad de Pereira, el cual tiene el objetivo de hacerlo con la mayor precisión y calidad posible. En este repositorio encontraras registros y de todo el producto desarrollado.
+Proyecto para comunicar una comunidad del colegio Centenario Pereira ubicado en la ciudad de Pereira, Colombia; El cual tiene el objetivo de hacerlo con la mayor precisión y calidad posible. En este repositorio encontraras registros y de todo el producto desarrollado.
 
 ## 👤 Autores
 
@@ -32,7 +32,7 @@ El proyecto consta de dos faces las cuales serán explicadas a continuación.
 
 
 ## 🛠 Hablilidades obtenidas
-Javascript, HTML, CSS, REACT, NODE
+Javascript, HTML, CSS
 
 
 ## ⚕️ Variables de entorno 
@@ -70,6 +70,13 @@ Javascript, HTML, CSS, REACT, NODE
 `EMAIL_USER`
 `EMAIL_PASS`
 
+
+## 💻 Requisitos Mínimos
+
+Versión Node: 20.10.0^ 
+Ram: 8GB^
+Almacenamiento: 5GB^
+Procesador: Intel I3 8th Geb o Similar^
 
 ## 💻 Correr de manera local
 
@@ -117,16 +124,22 @@ Instalar dependencias
   npm install
 ```
 
-Desplegar servidor local con la aplicación de backend
+Desplegar servidor local con la aplicación de FRONTEND
 
 ```bash
   npm run dev
 ```
+Comando Alterno
+```bash
+  npm start
+```
 ## ⚗️ Stack de tecnologías
 
-**Client:** React con Vite
+**Client:** React + Vite
 
-**Server:** Node con Express
+**Server:** Node + Express
+
+**Data Base:** PostgreSQL + Sequelize
 
 
 ## 📔 Documentación
