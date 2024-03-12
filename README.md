@@ -2,7 +2,7 @@
 
 # Proyecto Centenario Pereira 2023 - 2024
 
-Proyecto para comunicar una comunidad del colegio Centenario Pereira ubicado en la ciudad de Pereira, el cual tiene el obtejivo de hacerlo con la mayor precision y calidad posible. En este repositorio encontraras registros y de todo el producto desarrollado.
+Proyecto para comunicar una comunidad del colegio Centenario Pereira ubicado en la ciudad de Pereira, el cual tiene el objetivo de hacerlo con la mayor precisión y calidad posible. En este repositorio encontrarás registros de todo el proceso de desarrollado terminado.
 
 
 
