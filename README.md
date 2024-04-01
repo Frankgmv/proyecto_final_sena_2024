@@ -75,6 +75,12 @@ Javascript, HTML, CSS
 `EMAIL_USER`
 `EMAIL_PASS`
 
+#### Ver historial de consultas en consola
+
+`LOGGING`
+
+###### LOGGING recibe valores booleanos
+
 
 ## Correr de manera local
 

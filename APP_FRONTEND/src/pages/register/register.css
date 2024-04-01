@@ -1,0 +1,365 @@
+.registerBody {
+    width: 100%;
+    height: 100%;
+}
+
+.registerBody .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -10;
+}
+
+.registerBody .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.registerBody .fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000073;
+    /* overflow: hidden; */
+    z-index: -1;
+}
+
+.registerBody .textoRegister {
+    position: absolute;
+    top: 300px;
+    right: 200px;
+    color: var(--white);
+}
+
+.registerBody .containerInputRegister {
+    width: 50%;
+    height: 100vh;
+    background-color: var(--white);
+    clip-path: polygon(0 0, 80% 0, 100% 29%, 90% 100%, 0 100%);
+    z-index: 100;
+}
+
+.registerBody .textoRegister {
+    padding: 0 30px;
+}
+
+.registerBody .textoRegister h2 {
+    font-size: 28px;
+}
+
+.registerBody .textoRegister .boton {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.registerBody .containerInputRegister .encabezadoRegister {
+    width: 80%;
+    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
+.registerBody .containerInputRegister .encabezadoRegister h3 {
+    font-size: 48px;
+}
+
+.registerBody .containerInputRegister .encabezadoRegister p {
+    margin-top: 0px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.registerBody .containerInputRegister .encabezadoRegister h2 {
+    margin-top: 0px;
+    font-size: 20px;
+    text-transform: capitalize;
+
+}
+
+.registerBody .containerInputRegister form{
+    width: 90%;
+    margin: 30px auto;
+}
+
+.registerBody .containerInputRegister .form .junto{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.registerBody .input-container,
+.registerBody .select-container {
+    position: relative;
+    margin: 20px auto;
+    width: 40%;
+}
+
+
+.registerBody .input-container input {
+    font-size: 20px;  width: 90%;
+}
+
+.input-container input[type="text"],
+.input-container input[type="number"],
+.input-container input[type="password"],
+.input-container input[type="email"],
+.input-container input[type="date"] {
+    font-size: 20px;
+    width: 90%;
+    border: none;
+    border-bottom: 2px solid var(--black);
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+}
+
+.registerBody .input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--black);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.registerBody .input-container input:focus~.label,
+.registerBody .input-container input:valid~.label,
+.registerBody .input-container input:focus~.label,
+.registerBody .input-container input:valid~.label,
+.registerBody .input-container input:focus~.label,
+.registerBody .input-container input:valid~.label,
+.registerBody .input-container input:focus~.label,
+.registerBody .input-container input:valid~.label {
+    top: -20px;
+    font-size: 16px;
+    color: var(--black);
+}
+
+.registerBody .select-container select{
+    width: 90%;
+    outline: 0;
+    height: 40px;
+    font-size: 16px;
+    border: 0px;
+    border-bottom: 2px solid var(--black);
+}
+
+.registerBody .select-container select option{
+    font-size: 15px;
+    outline: 0;
+    height: 40px;
+}
+
+
+.registerBody .botonRegister{
+    margin-right: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.registerBody .footerInputsRegister{
+    margin-top: 20px;
+    margin-right: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.registerBody .footerInputsRegister .linkRegister{
+    display: none;
+}
+
+@media (width >=768px) and (width <=1200px) {
+    .registerBody .textoRegister {
+        position: absolute;
+        top: 300px;
+        right: 25px;
+        color: var(--white);
+    }
+
+    .registerBody .textoRegister h2 {
+        font-size: 18px;
+    }
+
+    .registerBody .containerInputRegister {
+        width: 60%;
+        height: 100vh;
+        clip-path: polygon(0 0, 80% 0, 100% 29%, 90% 100%, 0 100%);
+        z-index: 100;
+    }
+}
+
+@media (width <=768px) and (width > 400px) {
+    .registerBody .encabezadoRegister {
+        width: 50%;
+        margin: 0 auto;
+        border-bottom: 1px solid var(--black);
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .registerBody .encabezadoRegister p,
+    .registerBody .encabezadoRegister h2{
+        display: none;
+    }
+
+    .registerBody .containerInputRegister {
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
+        z-index: 100;
+    }
+
+    .footerInputsRegister {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .registerBody .footerInputsRegister .linkRegister {
+        display: block;
+    }
+
+    .registerBody .footerInputsRegister .linkRegister .linkInput {
+        color: var(--black);
+        text-decoration: none;
+        border-bottom: 2px solid var(--black);
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+
+    .registerBody .botonRegister{
+        margin-top: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .registerBody .img,
+    .registerBody .img img,
+    .registerBody .fondo,
+    .registerBody .textoRegister {
+        display: none;
+    }
+}
+
+@media (width <=768px) and (width >=451px) {
+    .registerBody{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .registerBody .containerInputRegister{
+        height: 100vh;
+        width: 100%;
+    }
+}
+
+@media (width <=450px) {
+    .registerBody .containerInputRegister{
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+    }
+
+    .registerBody .encabezadoRegister {
+        width: 50%;
+        border-bottom: 1px solid var(--black);
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .registerBody .encabezadoRegister p,
+    .registerBody .encabezadoRegister h2{
+        display: none;
+    }
+
+    .registerBody .textoRegister {
+        display: none;
+    }
+
+    .registerBody .containerInputRegister {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--white);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
+        z-index: 100;
+    }
+
+    .registerBody .containerInputRegister .select-container label{
+        margin-bottom: 20px;
+    }
+
+    .registerBody .containerInputRegister .input-container,
+    .registerBody .containerInputRegister .select-container{
+        width: 90vw;
+        margin-block: 25px;
+    }
+
+    .footerInputsRegister {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 40px 0;
+    }
+
+    .RegisterBody .footerInputsRegister .linkRegister {
+        display: block;
+        margin-top: 50px;
+    }
+
+    .RegisterBody .footerInputsRegister .linkRegister .linkInput {
+        color: var(--black);
+        text-decoration: none;
+        border-bottom: 2px solid var(--black);
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+
+    .registerBody .junto{
+        display: flex;
+        width: 100%;
+    }
+
+    .registerBody .select-container select option,
+    .registerBody .input-container{
+        font-size: 12px;
+    }
+
+    .footerInputsRegister {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .registerBody .footerInputsRegister .linkRegister {
+        display: block;
+    }
+
+    .registerBody .footerInputsRegister .linkRegister .linkInput {
+        color: var(--black);
+        text-decoration: none;
+        border-bottom: 2px solid var(--black);
+        font-size: 15px;
+        margin-right: 20px;
+    }
+
+    .registerBody .botonRegister{
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 12px;
+        text-align: center;
+        align-items: center;
+    }
+}

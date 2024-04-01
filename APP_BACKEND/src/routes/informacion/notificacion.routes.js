@@ -9,10 +9,10 @@ import { deleteAllNotificaciones, deleteNotificacion, getAllNotificaciones, getN
 const notificacionRouter = Router()
 
 // ? Obtener todas las notificaciones
-notificacionRouter.get('/notificaciones', authRutas, validarPermisos('P_NOTIFICACIONES'), getAllNotificaciones)
+notificacionRouter.get('/notificaciones', getAllNotificaciones)
 
 // ? Obtener notificaciones
-notificacionRouter.get('/notificaciones/:id', authRutas, validarPermisos('P_NOTIFICACIONES'), getNotificaciones)
+notificacionRouter.get('/notificaciones/:id', getNotificaciones)
 
 // ? Publicar y validar notificaciones
 notificacionRouter.post('/notificaciones', authRutas, validarPermisos('P_NOTIFICACIONES'), validateSchema(notificacionSchema), postNotificacion)
@@ -26,4 +26,4 @@ notificacionRouter.delete('/notificaciones/:id', authRutas, validarPermisos('P_N
 // ? Eliminar todas las notificaciones leídas
 notificacionRouter.delete('/notificaciones-delete-all', authRutas, validarPermisos('P_NOTIFICACIONES'), deleteAllNotificaciones)
 
-export default notificacionRouter
+export default (app) => app.use('/informacion', notificacionRouter)

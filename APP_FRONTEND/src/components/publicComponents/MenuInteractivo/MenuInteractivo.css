@@ -1,0 +1,29 @@
+.menuBody{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.menuBody .menuCards{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px 0px;
+    flex-wrap: wrap-reverse;
+}
+
+.menuBody .titulo{
+    text-align: center;
+    font-size: 28px;
+    color: var(--black);
+}
+
+.cardMenuInteractivo{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+@media (width <= 500px){
+    .menuBody .menuCards{
+        margin: 10px 0px;
+    }    
+}

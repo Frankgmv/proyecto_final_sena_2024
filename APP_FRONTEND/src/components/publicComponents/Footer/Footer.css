@@ -1,0 +1,100 @@
+.footerBody{
+    width: 95%;
+    margin: 50px auto;
+    text-align: center;
+    border-top: 2px solid var(--black);
+    flex-wrap: wrap;
+}
+
+.footerBody .encabezado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 80px;
+    width: 33%;
+}
+
+.footerBody .encabezado img{
+    width: 120px;
+    height: 120px;
+    margin: 0 60px;
+}
+
+.footerBody .encabezado p{
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.footerBody .footerInfo{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.footerBody .footerInfo .containerUbicacion{
+    width: 33%;
+    margin-left: 1px solid ;
+    border-right: 1px solid var(--black);
+    border-left: 1px solid var(--black);
+}
+
+.footerBody .footerInfo .ubicacionText{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+
+.footerBody .footerInfo .ubicacionText h4{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.footerBody .footerInfo .ubicacionText p{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.footerBody .footerInfo .footerContacto{
+    width: 33%;
+} 
+
+.footerBody .footerInfo .junto{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px 0;
+}
+
+.footerBody .footerInfo .junto h4{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.footerBody .footerInfo .junto p{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+@media (width <= 1024px){
+    .footerInfo{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footerBody .footerInfo .encabezado,
+    .footerBody .footerInfo .containerUbicacion,
+    .footerBody .footerInfo .footerContacto{
+        width: 90%;
+        border: none;
+        border-bottom: 1px solid;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 30px;
+    }
+    
+    .footerBody .footerInfo .containerUbicacion iframe{
+        width: 300px;
+    }
+}

@@ -2,6 +2,7 @@ import { Op } from 'sequelize'
 import DetallePermiso from '../../models/data/detallePermiso.js'
 import Permiso from '../../models/data/permiso.js'
 import Usuario from '../../models/data/usuario.js'
+import Rol from '../../models/data/rol.js'
 
 export const postDetallePermisoDefaultService = (data) => {
     return new Promise(async (resolve, reject) => {
@@ -125,8 +126,18 @@ export const deleteDetallePermisosByDocumentoService = (documento) => {
                 })
             }
 
-            for (const permiso of consultarDetallePermiso) {
-                await permiso.destroy()
+            const consultarUsuario = await Usuario.findByPk(documento)
+            const consultarRol = await Rol.findByPk(consultarUsuario.RolId)
+
+            if (consultarRol.rolKey !== 'WM') {
+                for (const permiso of consultarDetallePermiso) {
+                    await permiso.destroy()
+                }
+            } else {
+                return resolve({
+                    ok: false,
+                    message: 'Web master inmutable'
+                })
             }
 
             resolve({
@@ -142,6 +153,37 @@ export const deleteDetallePermisosService = (idDetallePermiso) => {
     return new Promise(async (resolve, reject) => {
         try {
             const consultarDetallePermiso = await DetallePermiso.findByPk(idDetallePermiso)
+
+            if (!consultarDetallePermiso) {
+                return resolve({
+                    ok: false,
+                    message: 'Detalle permiso no encontrado'
+                })
+            }
+
+            await consultarDetallePermiso.destroy()
+
+            resolve({
+                ok: true,
+                message: 'Detalle permiso eliminado'
+            })
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
+
+export const deleteDetalleParamsPermisosService = ({UsuarioId, PermisoId}) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const consultarDetallePermiso = await DetallePermiso.findOne({
+                where: {
+                    [Op.and]: {
+                        UsuarioId: UsuarioId,
+                        PermisoId: PermisoId
+                    }
+                }
+            })
 
             if (!consultarDetallePermiso) {
                 return resolve({

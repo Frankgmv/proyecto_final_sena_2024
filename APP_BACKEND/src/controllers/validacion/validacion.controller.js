@@ -3,7 +3,8 @@ import { getTokenKeyService } from '../../services/data/token.services.js'
 import { getUsuarioService, postUsuarioService } from '../../services/data/usuario.services.js'
 import { createTokenAccess, validarToken } from '../../lib/jwt.js'
 import { getRolService } from '../../services/data/rol.services.js'
-
+import { defaultVariables } from '../../variables.js'
+import { enviarEmail } from '../../lib/nodemailer.js'
 export const postRegistro = async (req, res, next) => {
     try {
         const {
@@ -51,6 +52,14 @@ export const postRegistro = async (req, res, next) => {
                 message: 'iniciar sesión en el sistema'
             })
         }
+
+        const webMaster = await getUsuarioService(defaultVariables.usuario.id)
+
+        if (webMaster) {
+            const messageEmail = `Hay un usuario nuevo en plataforma.\n \n \t \t Verifica lo más pronto posible \n \n No responser.`
+            await enviarEmail(messageEmail, webMaster.data.correo, '[I. E. Centenario de Pereira] Nuevo Usuario')
+        }
+
         res.status(201).json(guardarUsuario)
     } catch (error) {
         next(error)
@@ -65,7 +74,7 @@ export const logout = (req, res, next) => {
 
         res.status(200).json({
             ok: true,
-            message: 'sessión cerrada'
+            message: 'Sesión cerrada'
         })
     } catch (err) {
         next(err)
@@ -124,17 +133,19 @@ export const login = async (req, res, next) => {
 }
 
 export const verificarToken = async (req, res, next) => {
-    let { accessToken } = req.headers['Authorization'] || req.cookies
+    let accessToken = req.headers['authorization']
 
     if (!accessToken) {
         return res.status(401).json({
             ok: false,
-            message: 'NO Autorizado'
+            message: 'NO Autorizado, inicia sesión'
         })
     }
 
+    const token = accessToken.split(' ')[1]
+
     try {
-        const dataToken = await validarToken(accessToken)
+        const dataToken = await validarToken(token)
 
         res.status(200).json({
             ok: true,

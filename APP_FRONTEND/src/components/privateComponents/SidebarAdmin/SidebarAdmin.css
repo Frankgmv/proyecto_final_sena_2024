@@ -1,0 +1,69 @@
+
+.Sidebar-body {
+    background-color: var(--black);
+    height: 100%;
+    overflow: auto;
+}
+
+.Sidebar-body .subtitleSide{
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 5px;
+}
+
+.icon_menu {
+    cursor: pointer;
+}
+
+.Sidebar-body ul {
+    list-style: none;
+    padding: 1rem 2rem;
+}
+
+.Sidebar-body ul li {
+    margin-bottom: 1rem;
+    padding: 5px 0px;
+}
+
+.Sidebar-body .link {
+    text-decoration: none;
+    color: var(--white);
+    font-size: clamp(.6rem, 1.5vw, 1rem);
+    position: relative;
+    text-transform: capitalize;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+
+.Sidebar-body .icon {
+    margin-right: 10px;
+}
+
+.Sidebar-body .link:focus,
+.Sidebar-body .link:hover {
+    color: var(--white);
+}
+
+.Sidebar-body .link:focus:after,
+.Sidebar-body .link:hover:after {
+    width: 100%;
+    left: 0%;
+}
+
+.Sidebar-body .link:after {
+    content: "";
+    pointer-events: none;
+    bottom: -4px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 1.5px;
+    background-color: var(--white);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}

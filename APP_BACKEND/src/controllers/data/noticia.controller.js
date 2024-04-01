@@ -42,7 +42,7 @@ export const postNoticia = async (req, res, next) => {
                 })
             }
 
-            // Utilizamos un formato de compresión de imágenes sin pérdidas
+            // Utilizamos un formato de compresión de imagenes sin pérdidas
             const buffer = Buffer.from(image.buffer, 'binary')
 
             const nombreArchivo = crearNombreRecurso(image)
@@ -58,7 +58,7 @@ export const postNoticia = async (req, res, next) => {
 
             // Guardamos la imagen comprimida
             bufferComprimido = await proccesImage.toBuffer(nombreArchivo.mimetype)
-            urlPath = `src/upload/${nombreArchivo.nombre}`
+            urlPath = `var/data/${nombreArchivo.nombre}`
 
             datosNoticia = {
                 ...bodyBuild,
@@ -95,7 +95,7 @@ export const getAllNoticias = async (req, res, next) => {
         } = req.query
         const estadoNoticia = estado || 'todas'
         const numPagina = parseInt(pagina || 1)
-        const limiteNoticia = parseInt(limite || 12)
+        const limiteNoticia = parseInt(limite || 1000)
 
         const noticias = await getAllNoticiasService(estadoNoticia, numPagina, limiteNoticia)
         res.json(noticias)
@@ -167,7 +167,7 @@ export const putNoticia = async (req, res, next) => {
             }
 
             bufferComprimido = await proccesImage.toBuffer(nombreArchivo.mimetype)
-            urlPath = `src/upload/${nombreArchivo.nombre}`
+            urlPath = `var/data/${nombreArchivo.nombre}`
 
             datosNoticia = {
                 ...bodyBuild,

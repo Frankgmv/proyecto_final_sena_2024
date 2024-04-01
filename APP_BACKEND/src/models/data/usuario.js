@@ -1,4 +1,4 @@
-import { DataTypes, Op } from 'sequelize'
+import { DataTypes } from 'sequelize'
 import { sequelize } from '../../conection.js'
 import Rol from './rol.js'
 import t from '../../helpers/transacciones.js'
@@ -53,14 +53,7 @@ Usuario.belongsTo(Rol, {foreignKey: 'RolId'})
 async function insertDefaultData(insertDefaultData) {
     try {
         await Usuario.sync()
-        const exiteUsuario = await Usuario.findOne({
-            where:{
-                [Op.and]:{
-                    correo: insertDefaultData.correo,
-                    id: insertDefaultData.id
-                }
-            }
-        })
+        const exiteUsuario = await Usuario.findByPk(insertDefaultData.id)
         if (!exiteUsuario) {
             let transaccion = await t.create()
             if (!transaccion.ok) {

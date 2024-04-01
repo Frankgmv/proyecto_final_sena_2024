@@ -25,7 +25,7 @@ export const postItem = async (req, res, next) => {
 
         const validarBody = validateSchemaInto(itemSchema, bodyBuild)
         if (validarBody.issues) {
-            return res.status(400).json(validarBody)
+            return res.status(400).json({error: true, zodError: validarBody})
         }
 
         let image = req.file
@@ -44,7 +44,7 @@ export const postItem = async (req, res, next) => {
                 })
             }
 
-            // Utilizamos un formato de compresión de imágenes sin pérdidas
+            // Utilizamos un formato de compresión de imagenes sin pérdidas
             const buffer = Buffer.from(image.buffer, 'binary')
 
             const nombreArchivo = crearNombreRecurso(image)
@@ -61,17 +61,17 @@ export const postItem = async (req, res, next) => {
             // Guardamos la imagen comprimida
             bufferComprimido = await proccesImage.toBuffer(nombreArchivo.mimetype)
 
-            urlPath = `src/upload/${nombreArchivo.nombre}`
+            urlPath = `var/data/${nombreArchivo.nombre}`
             datosItem = {
                 ...bodyBuild,
                 imgPath: nombreArchivo.nombre
             }
         } else {
             // Montar anuncio sin imagen
-            datosItem = {
-                ...bodyBuild,
-                imgPath: null
-            }
+           return res.status(400).json({
+                ok:false,
+                message: 'La imagen es requerida'
+           })
         }
 
         const crearItem = await postItemService(datosItem)
@@ -159,7 +159,7 @@ export const putItem = async (req, res, next) => {
             }
 
             bufferComprimido = await proccesImage.toBuffer(nombreArchivo.mimetype)
-            urlPath = `src/upload/${nombreArchivo.nombre}`
+            urlPath = `var/data/${nombreArchivo.nombre}`
 
             datosItem = {
                 ...bodyBuild,

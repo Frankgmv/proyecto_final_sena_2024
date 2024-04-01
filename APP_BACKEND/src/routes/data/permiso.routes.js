@@ -9,10 +9,10 @@ import { validarPermisos } from '../../middlewares/validarPermisos.js'
 const permisoRouter = Router()
 
 // Obtener todos los permisos
-permisoRouter.get('/permisos', authRutas, validarPermisos('P_ADMIN'), getAllPermiso)
+permisoRouter.get('/permisos', getAllPermiso)
 
 // Obtener un permiso
-permisoRouter.get('/permisos/:id', authRutas, validarPermisos('P_ADMIN'), getPermiso)
+permisoRouter.get('/permisos/:id', getPermiso)
 
 // Crear un permiso
 permisoRouter.post('/permisos', authRutas, validarPermisos('P_ADMIN'), validateSchema(permisoSchema), postPermiso)
@@ -23,4 +23,4 @@ permisoRouter.put('/permisos/:id', authRutas, validarPermisos('P_ADMIN'), valida
 // Eliminar un permiso que no sea por defecto
 permisoRouter.delete('/permisos/:id', authRutas, validarPermisos('P_ADMIN'), validarPermisosKey, deletePermiso)
 
-export default permisoRouter
+export default (app) => app.use('/data', permisoRouter)

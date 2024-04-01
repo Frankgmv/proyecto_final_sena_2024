@@ -1,0 +1,30 @@
+.homeBody{
+    position: relative;
+}
+
+.calendario-eventos{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+}
+
+.calendario{
+    width: 45%;
+}
+
+.eventos{
+    width: 45%;
+}
+
+@media (width <= 1024px){
+    .calendario-eventos{
+        flex-direction: column;
+    }
+
+    .calendario,
+    .eventos{
+        width: 95%;
+        margin-bottom: 20px;
+    }
+}

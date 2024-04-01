@@ -7,9 +7,9 @@ import { validarPermisos } from '../../middlewares/validarPermisos.js'
 
 const pqrsRouter = Router()
 
-pqrsRouter.get('/pqrs', authRutas, validarPermisos('P_PQRS'), getAllPqrs)
+pqrsRouter.get('/pqrs', getAllPqrs)
 
-pqrsRouter.get('/pqrs/:id', authRutas, validarPermisos('P_PQRS'), getPqrs)
+pqrsRouter.get('/pqrs/:id', getPqrs)
 
 pqrsRouter.post('/pqrs', validateSchema(pqrsSchema), postPqrs)
 
@@ -20,4 +20,4 @@ pqrsRouter.delete('/pqrs/:id', authRutas, validarPermisos('P_PQRS'), deletePqrs)
 // ? Eliminar todos los pqrs leídos
 pqrsRouter.delete('/pqrs-delete-all', authRutas, validarPermisos('P_PQRS'), deleteAllPqrs)
 
-export default pqrsRouter
+export default (app) => app.use('/informacion', pqrsRouter)

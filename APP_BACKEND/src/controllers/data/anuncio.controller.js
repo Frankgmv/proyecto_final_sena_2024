@@ -47,7 +47,7 @@ export const postAnuncio = async (req, res, next) => {
                 })
             }
 
-            // Utilizamos un formato de compresión de imágenes sin pérdidas
+            // Utilizamos un formato de compresión de imagenes sin pérdidas
             const buffer = Buffer.from(image.buffer, 'binary')
 
             const nombreArchivo = crearNombreRecurso(image)
@@ -63,7 +63,7 @@ export const postAnuncio = async (req, res, next) => {
 
             // Guardamos la imagen comprimida
             bufferComprimido = await proccesImage.toBuffer(nombreArchivo.mimetype)
-            urlPath = `src/upload/${nombreArchivo.nombre}`
+            urlPath = `var/data/${nombreArchivo.nombre}`
 
             datosAnuncio = {
                 ...bodyBuild,
@@ -176,7 +176,7 @@ export const putAnuncio = async (req, res, next) => {
             }
 
             bufferComprimido = await processImage.toBuffer(nombreArchivo.mimetype)
-            urlPath = `src/upload/${nombreArchivo.nombre}`
+            urlPath = `var/data/${nombreArchivo.nombre}`
 
             datosAnuncio = {
                 ...bodyBuild,
