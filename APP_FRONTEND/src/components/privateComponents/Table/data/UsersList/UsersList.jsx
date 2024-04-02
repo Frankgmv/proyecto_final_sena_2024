@@ -11,12 +11,15 @@ import { useUserContext } from "../../../../../context/UserContext";
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from "../../../../../assets/includes/localStorage";
 import { formateFecha } from "../../../../../assets/includes/funciones";
 import { useCredentialContext } from "../../../../../context/AuthContext";
+import BotonExcel from '../../../../publicComponents/botones/BotonExcel/BotonExcel'
 
 import { BsTrash3 } from "react-icons/bs";
 import { FiEdit2 } from "react-icons/fi";
 import SendIcon from '@mui/icons-material/Send';
 import { RiShieldKeyholeLine } from "react-icons/ri";
 import { useGeneralContext } from "../../../../../context/GeneralContext";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 
 function UserList() {
@@ -378,6 +381,22 @@ function UserList() {
         }
     }
 
+    const [loader, setLoader] = useState(false);
+
+    const downloadPDF = () => {
+        const capture = document.querySelector('.datagrid');
+        setLoader(true);
+        html2canvas(capture).then((canvas) => {
+            const imgData = canvas.toDataURL('img/png');
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const componentWidth = doc.internal.pageSize.getWidth();
+            const componentHeight = doc.internal.pageSize.getHeight();
+            doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+            setLoader(false);
+            doc.save('data.pdf');
+        })
+    }
+
     return (
         <>
             <div style={{ height: isSmallScreen ? '80%' : '70%', width: "100%", marginTop: '-45px' }}>
@@ -396,6 +415,20 @@ function UserList() {
                     >
                         Añadir
                     </Button>
+                    <BotonExcel data={usuarios} />
+                    <Button
+                    variant='contained'
+                    color="success"
+                    className="receipt-modal-download-button"
+                    onClick={downloadPDF}
+                    disabled={!(loader === false)}
+                >
+                    {loader ? (
+                        <span>Downloading</span>
+                    ) : (
+                        <span>Descargar PDF</span>
+                    )}
+                </Button>
                 </Grid>
                 <DataGrid
                     rows={usuarios.map((user) => {
@@ -420,6 +453,7 @@ function UserList() {
                     editMode='row'
                     hideFooterSelectedRowCount
                     ignoreDiacritic
+                    className="datagrid"
                     disableDensitySelector
                     slots={{
                         toolbar: GridToolbar,

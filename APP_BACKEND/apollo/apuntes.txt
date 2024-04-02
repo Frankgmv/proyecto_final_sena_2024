@@ -1,0 +1,39 @@
+///////////// TAREA DEL KEVIN
+
+TODO Buscar la manera de como resetear los campos de las vistapordia y por mes cada tiempo
+
+/////////////////////////////////////////////////////////
+
+
+- validar el estado en el login
+- validar que no modifiquen el rector
+- recuperacion de password
+- eliminar permisos de usuarios cuando se elimine usuario
+
+// ENTIDADES DE DATOS
+
+    // VACIOS
+Categoria
+DetallePermiso
+Permiso
+Rol
+Seccion
+
+    // REQUIEREN REGISTRO
+Pqrs =>  🔔
+Anuncio =>  📖 🔔
+Evento =>  📖
+Item =>  📖
+Link =>  📖
+Noticia =>  📖 
+Token =>  📖 🔔
+Usuario =>  📖 🔔
+Galeria =>  📖
+Slider =>  📖
+Video =>  📖
+Archivo =>  📖
+
+// ENTIDADES DE REGISTRO
+Vistas 👁️
+Historial => 📖
+Notificaci => 🔔

@@ -34,9 +34,7 @@ const EventsPage = () => {
             console.error("Error al traer la imagen:", error);
         }
     };
-    useEffect(() => {
-        console.log(gallery);
-    }, [gallery]);
+    
     return (
         <>
             <NavBar />

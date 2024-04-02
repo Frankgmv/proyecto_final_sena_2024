@@ -1,0 +1,14 @@
+{
+    "files.exclude": {
+        "node_modules": false,
+        "LICENSE":false,
+        "package.json":false,
+        ".gitignore":false,
+        "README.md":false,
+        "package-lock.json":false,
+        ".babelrc":false,
+        ".esLintrc.json":false,
+        "./launch.json":false,
+    },
+    "mos.port": ""
+}
