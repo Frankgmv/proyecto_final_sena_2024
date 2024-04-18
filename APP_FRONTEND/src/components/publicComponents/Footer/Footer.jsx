@@ -7,6 +7,8 @@ import s3 from '../../../assets/img/slider/3.png'
 import s4 from '../../../assets/img/slider/4.png'
 import s5 from '../../../assets/img/slider/5.png'
 import s6 from '../../../assets/img/slider/6.png'
+import { URL_CREADORES } from '../../../assets/includes/variables'
+import Authores from './Authores'
 
 const Footer = () => {
     return (
@@ -68,36 +70,67 @@ const Footer = () => {
                 <div className="slide-track">
                     <div className="slide">
                         <a href="https://www.icfes.gov.co" target='blank'>
-                            <img src={s1} alt="" />
+                            <img src={s1} alt="https://www.icfes.gov.co" title="https://www.icfes.gov.co" />
                         </a>
                     </div>
                     <div className="slide">
                         <a href="https://www.mineducacion.gov.co/portal/" target='blank'>
-                            <img src={s2} alt="" />
+                            <img src={s2} alt="https://www.mineducacion.gov.co/portal/" title="https://www.mineducacion.gov.co/portal/" />
                         </a>
                     </div>
                     <div className="slide">
                         <a href="https://www.pereira.gov.co" target='blank'>
-                            <img src={s3} alt="" />
+                            <img src={s3} alt="https://www.pereira.gov.co" title="https://www.pereira.gov.co" />
                         </a>
                     </div>
                     <div className="slide">
                         <a href="http://www.pereiraeduca.gov.co" target='blank'>
-                            <img src={s4} alt="" />
+                            <img src={s4} alt="http://www.pereiraeduca.gov.co" title="http://www.pereiraeduca.gov.co" />
                         </a>
                     </div>
                     <div className="slide">
                         <a href="https://www.colombiaaprende.edu.co" target='blank'>
-                            <img src={s5} alt="" />
+                            <img src={s5} alt="https://www.colombiaaprende.edu.co" title="https://www.colombiaaprende.edu.co" />
                         </a>
                     </div>
                     <div className="slide">
                         <a href="https://gobiernodigital.mintic.gov.co/portal/" target='blank'>
-                            <img src={s6} alt="" />
+                            <img src={s6} alt="https://gobiernodigital.mintic.gov.co/portal/" title="https://gobiernodigital.mintic.gov.co/portal/" />
+                        </a>
+                    </div>
+                    <div className="slide">
+                        <a href="https://www.icfes.gov.co" target='blank'>
+                            <img src={s1} alt="https://www.icfes.gov.co" title="https://www.icfes.gov.co" />
+                        </a>
+                    </div>
+                    <div className="slide">
+                        <a href="https://www.mineducacion.gov.co/portal/" target='blank'>
+                            <img src={s2} alt="https://www.mineducacion.gov.co/portal/" title="https://www.mineducacion.gov.co/portal/" />
+                        </a>
+                    </div>
+                    <div className="slide">
+                        <a href="https://www.pereira.gov.co" target='blank'>
+                            <img src={s3} alt="https://www.pereira.gov.co" title="https://www.pereira.gov.co" />
+                        </a>
+                    </div>
+                    <div className="slide">
+                        <a href="http://www.pereiraeduca.gov.co" target='blank'>
+                            <img src={s4} alt="http://www.pereiraeduca.gov.co" title="http://www.pereiraeduca.gov.co" />
+                        </a>
+                    </div>
+                    <div className="slide">
+                        <a href="https://www.colombiaaprende.edu.co" target='blank'>
+                            <img src={s5} alt="https://www.colombiaaprende.edu.co" title="https://www.colombiaaprende.edu.co" />
+                        </a>
+                    </div>
+                    <div className="slide">
+                        <a href="https://gobiernodigital.mintic.gov.co/portal/" target='blank'>
+                            <img src={s6} alt="https://gobiernodigital.mintic.gov.co/portal/" title="https://gobiernodigital.mintic.gov.co/portal/" />
                         </a>
                     </div>
                 </div>
             </div>
+            <Authores url={URL_CREADORES}/>
         </>
     )
 }

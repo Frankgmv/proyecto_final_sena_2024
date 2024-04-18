@@ -6,10 +6,19 @@ import { useEffect, useState } from 'react'
 import { useCredentialContext } from '../../context/AuthContext'
 import toastr from '../../assets/includes/Toastr'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 const Login = () => {
     const [dataLogin, setDataLogin] = useState({});
     const { roles, errors, login, responseMessage, isAuthenticate, verifyAuth } = useCredentialContext();
     const navigate = useNavigate()
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
 
     useEffect(() => {
         if (errors.length != 0) {
@@ -66,6 +75,11 @@ const Login = () => {
                 <img src={fondo} alt="logo.png" />
             </div>
             <div className="fondo"></div>
+            <div className="redirecciones">
+                <Link className='link-redirecciones' href="/">Inicio</Link>
+                <Link className='link-redirecciones' href="/login">Iniciar Sesión</Link>
+                <Link className='link-redirecciones' href="/register">Registarse</Link>
+            </div>
             <div className="textoRegister">
                 <h2>¿Aún no tienes cuenta?</h2>
                 <div className="boton" onClick={() => navigate("/register")}>
@@ -82,6 +96,11 @@ const Login = () => {
                     <p>A la plataforma educativa</p>
                     <h2>I. E. Centenario Pereira</h2>
                 </div>
+                <div className="redireccionesMobile">
+                    <Link className='link-redireccionesMobile' href="/">Inicio</Link>
+                    <Link className='link-redireccionesMobile' href="/login">Iniciar Sesion</Link>
+                    <Link className='link-redireccionesMobile' href="/register">Registarse</Link>
+                </div>
                 <div className="form">
                     <form method='POST' onSubmit={handleSubmit}>
                         <div className="junto">
@@ -91,9 +110,17 @@ const Login = () => {
                                 <div className="underline"></div>
                             </div>
                             <div className="input-container">
-                                <input id="password" name='password' onChange={handleChange} type="password" />
+                                <input
+                                    id="password"
+                                    name="password"
+                                    onChange={handleChange}
+                                    type={showPassword ? "text" : "password"}
+                                />
                                 <label className="label" htmlFor="password">Contraseña</label>
                                 <div className="underline"></div>
+                                <button type='button' style={{ color: 'black' }} className="eye-button" onClick={handleShowPassword}>
+                                    {showPassword ? <FontAwesomeIcon icon={faEyeSlash} /> : <FontAwesomeIcon icon={faEye} />}
+                                </button>
                             </div>
                         </div>
                         <div className="select-container">

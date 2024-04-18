@@ -78,6 +78,10 @@ export const deleteNoticiaRequest = (id) => axios.delete(`/data/noticias/${id}`)
 
 export const getAllLinkRequest = () => axios.get(`/data/links`);
 
+export const getAllLinkPDFRequest = () => axios.get(`/data/links?tipo=pdf`);
+
+export const getAllLinkBlogsRequest = () => axios.get(`/data/links?tipo=blog`);
+
 export const getLinkRequest = (id) => axios.get(`/data/links/${id}`);
 
 export const postLinkRequest = (link) => axios.post(`/data/links`, link);
