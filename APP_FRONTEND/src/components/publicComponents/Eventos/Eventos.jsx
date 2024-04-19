@@ -1,5 +1,5 @@
 import './Eventos.css'
-import f1 from '../../../assets/img/f1.jpg'
+import f1 from '../../../assets/img/default.jpeg'
 import Boton2 from '../botones/boton2/Boton2';
 import { MOSTRAR_ARCHIVO } from '../../../assets/includes/variables';
 import { useDataGeneralContext } from '../../../context/publicContexts/DataGeneralContext';

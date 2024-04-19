@@ -1,5 +1,5 @@
 import './Login.css'
-import fondo from '../../assets/img/f1.jpg'
+import fondo from '../../assets/img/default.jpeg'
 import Boton4 from '../../components/publicComponents/botones/boton4/Boton4'
 import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'

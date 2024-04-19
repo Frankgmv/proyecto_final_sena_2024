@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './NewsPage.css'
-import f1 from '../../assets/img/f1.jpg'
+import f1 from '../../assets/img/default.jpeg'
 import { Modal } from "@mui/material";
 import NavBar from "../../components/publicComponents/Navbar/NavBar";
 import { formateFecha } from "../../assets/includes/funciones";

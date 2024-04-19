@@ -1,5 +1,5 @@
 import './EventsPage.css'
-import f1 from '../../assets/img/f1.jpg'
+import f1 from '../../assets/img/default.jpeg'
 import NavBar from "../../components/publicComponents/Navbar/NavBar";
 import { MOSTRAR_ARCHIVO } from "../../assets/includes/variables";
 import { useDataGeneralContext } from "../../context/publicContexts/DataGeneralContext";

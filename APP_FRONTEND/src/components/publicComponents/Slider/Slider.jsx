@@ -1,4 +1,4 @@
-import f2 from '../../../assets/img/f2.jpg'
+import f2 from '../../../assets/img/default.jpeg'
 import './slider.css'
 import {MOSTRAR_ARCHIVO } from '../../../assets/includes/variables'
 import { useDataGeneralContext } from '../../../context/publicContexts/DataGeneralContext'

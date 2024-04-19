@@ -1,6 +1,6 @@
 import Boton4 from '../../components/publicComponents/botones/boton4/Boton4'
 import './Register.css'
-import fondo from '../../assets/img/f1.jpg'
+import fondo from '../../assets/img/default.jpeg'
 import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useCredentialContext } from '../../context/AuthContext'
